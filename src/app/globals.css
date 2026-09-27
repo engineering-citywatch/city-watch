@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #EBEDE8;
+  --foreground: #073127;
+  --card: #FFFFFF;
+  --card-foreground: #073127;
+  --popover: #FFFFFF;
+  --popover-foreground: #073127;
+  --primary: #004838;
+  --primary-foreground: #EBEDE8;
+  --secondary: #333F3C;
+  --secondary-foreground: #EBEDE8;
+  --muted: #EBEDE8;
+  --muted-foreground: #073127;
+  --accent: #E2FB6C;
+  --accent-foreground: #073127;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #333F3C;
+  --input: #333F3C;
+  --ring: #004838;
+  --chart-1: #004838;
+  --chart-2: #073127;
+  --chart-3: #333F3C;
+  --chart-4: #E2FB6C;
+  --chart-5: #EBEDE8;
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #073127;
+  --sidebar-primary: #004838;
+  --sidebar-primary-foreground: #EBEDE8;
+  --sidebar-accent: #E2FB6C;
+  --sidebar-accent-foreground: #073127;
+  --sidebar-border: #333F3C;
+  --sidebar-ring: #004838;
+}
+
+.dark {
+  --background: #073127;
+  --foreground: #EBEDE8;
+  --card: #004838;
+  --card-foreground: #EBEDE8;
+  --popover: #004838;
+  --popover-foreground: #EBEDE8;
+  --primary: #E2FB6C;
+  --primary-foreground: #073127;
+  --secondary: #333F3C;
+  --secondary-foreground: #EBEDE8;
+  --muted: #004838;
+  --muted-foreground: #EBEDE8;
+  --accent: #E2FB6C;
+  --accent-foreground: #073127;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #333F3C;
+  --input: #333F3C;
+  --ring: #E2FB6C;
+  --chart-1: #E2FB6C;
+  --chart-2: #EBEDE8;
+  --chart-3: #333F3C;
+  --chart-4: #004838;
+  --chart-5: #073127;
+  --sidebar: #004838;
+  --sidebar-foreground: #EBEDE8;
+  --sidebar-primary: #E2FB6C;
+  --sidebar-primary-foreground: #073127;
+  --sidebar-accent: #333F3C;
+  --sidebar-accent-foreground: #EBEDE8;
+  --sidebar-border: #333F3C;
+  --sidebar-ring: #E2FB6C;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-light;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light;
+  }
+  strong, b {
+    @apply font-normal;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-down {
+    animation: slide-down 0.3s ease-out;
+  }
+}
